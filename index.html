@@ -9,7 +9,6 @@
     :root {
       --primary: #0f2a44;
       --muted: #6b7280;
-      --border: #e5e7eb;
       --bg: #ffffff;
       --accent: #16a34a;
     }
@@ -181,26 +180,106 @@
 .tags + img {
   margin-top: 20px;
 }
+
+
+
+body {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.project img {
+  transition: transform 0.4s ease;
+}
+
+.project img:hover {
+  transform: scale(1.03);
+}
+
+.skill-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.tag {
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.tag:hover {
+  background: #e2e8f0;
+  transform: scale(1.05);
+}
+
+a {
+  position: relative;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+.socials img,
+footer img {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.socials img:hover,
+footer img:hover {
+  transform: translateY(-2px) scale(1.1);
+  opacity: 1;
+}
   </style>
 </head>
+
+
 <body>
   <!-- Top Header -->
   <header class="top-header">
-  <div class="header-inner">
-    <strong>Joaquin Barola</strong>
+    <div class="header-inner">
+      <strong>Joaquin Barola</strong>
 
-    <nav class="socials">
-      <a href="#contacts">Contacts</a>
-      <a href="#"><img src="github.png" alt="GitHub"></a>
-      <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
-    </nav>
-  </div>
-</header>
+      <nav class="socials">
+        <a href="#contacts">Contacts</a>
+        <a href="#"><img src="github.png" alt="GitHub"></a>
+        <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+      </nav>
+    </div>
+  </header>
 
   <div class="container">
 
     <!-- Header -->
-    <section class="header">
+    <section class="header reveal">
       <h1>Nice to meet you!<br>I'm <span>Joaquin Barola</span></h1>
       <p>
         A 4th-year BSIT student experienced in web and mobile development, 
@@ -212,7 +291,7 @@
     <div class="divider"></div>
 
     <!-- Skills -->
-    <section>
+    <section class="reveal">
       <h2>Web and Mobile Application Development</h2>
       <div class="skills">
         <div class="skill-box">
@@ -230,51 +309,21 @@
 
     <!-- Projects -->
     <section>
-      <h2>My Projects</h2>
+      <h2 class="reveal">My Projects</h2>
+
       <div class="projects">
 
-        <div class="project">
-        <div>
-            <h3>VoltUp (2024)</h3>
-            <small>IoT-Based Smart Energy Monitoring System</small>
-            <p>
-            An IoT system that monitors real-time energy consumption using an
-            Arduino Nano ESP32, PZEM-004T sensor, and a CT clamp, with a
-            mobile app for data visualization and alerts.
-            </p>
-
-            <div class="tags">
-            <span class="tag">IoT</span>
-            <span class="tag">ESP32</span>
-            </div>
-
-            <img src="voltup.png" alt="VoltUp Hardware Setup">
-        </div>
-
-        <!-- RIGHT COLUMN -->
-        <div class="project-images">
-            <img src="voltup2.png" alt="VoltUp App UI" class="project-img-small">
-            
-        </div>
-        </div>
-
-
-
-
-
-        <div class="project">
-        <div>
+        <div class="project reveal">
+          <div>
             <h3>OKSI (Ongoing)</h3>
             <small>IoT-Based Smart Energy Monitoring System</small>
             <p>
-             An automated watering and monitoring system for okra and siling
-              labuyo cultivation in urban farming. The system integrates
-              sensors, provides real-time data, and supports sustainable water
-              management through a mobile app.
+              An automated watering and monitoring system for okra and siling
+              labuyo cultivation in urban farming.
             </p>
 
             <div class="tags">
-            <span class="tag">React Native</span>
+              <span class="tag">React Native</span>
               <span class="tag">IoT</span>
               <span class="tag">Supabase</span>
               <span class="tag">Node.js</span>
@@ -282,23 +331,72 @@
             </div>
 
             <img src="oksi.png" alt="oksidoksi">
-        </div>
+          </div>
 
-        <!-- RIGHT COLUMN -->
-        <div class="project-images">
+          <div class="project-images">
             <img src="oksi2.png" alt="oksi App UI" class="project-img-small">
-            
-        </div>
+          </div>
+
         </div>
 
 
-        
+        <div class="project reveal">
+          <div>
+            <h3>VoltUp (2024)</h3>
+            <small>IoT-Based Smart Energy Monitoring System</small>
+            <p>
+              An IoT system that monitors real-time energy consumption using an
+              Arduino Nano ESP32, PZEM-004T sensor, and a CT clamp, with a
+              mobile app for data visualization and alerts.
+            </p>
+
+            <div class="tags">
+              <span class="tag">IoT</span>
+              <span class="tag">ESP32</span>
+            </div>
+
+            <img src="voltup.png" alt="VoltUp Hardware Setup">
+          </div>
+
+          <div class="project-images">
+            <img src="voltup2.png" alt="VoltUp App UI" class="project-img-small">
+          </div>
+        </div>
+
+
+
+        <div class="project reveal"> <!-- start -->
+          <div>
+            <h3>The Sovereign Dial (2023)</h3>
+            <small>A Cross-Platform Mobile Application for Luxury Watch Browsing</small>
+            <p>
+              Mobile Application developed using Ionic Framework and Angular,
+               provides a cross-platform solution for browsing watches. 
+               It features a categorized product catalog with images, 
+               specifications, and search, filter, and sort functionality.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Ionic</span>
+              <span class="tag">PHP</span>
+            </div>
+
+            <img src="sovereign.png" style="width: 300px;" alt="oksidoksi">
+          </div>
+
+          <div class="project-images">
+            <img src="dialscreen.png" alt="App UI" class="project-img-small">
+          </div><!-- end -->
+
+      </div>
+
+
     </section>
 
     <div class="divider"></div>
 
     <!-- Contact -->
-    <section id="contacts" class="contact">
+    <section id="contacts" class="contact reveal">
       <h2>Contact</h2>
       <p>Feel free to contact me, I would love to hear from you!</p>
       <p><a href="mailto:qrjfbarola@tip.edu.ph">qrjfbarola@tip.edu.ph</a></p>
@@ -311,5 +409,24 @@
     </section>
 
   </div>
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+
+    const revealOnScroll = () => {
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  </script>
+
 </body>
 </html>

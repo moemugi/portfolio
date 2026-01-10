@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joaquin Barola – Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f2a44;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #ffffff;
+      --accent: #16a34a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--primary);
+    }
+
+    /* Top Header */
+    .top-header {
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .socials {
+      display: flex;
+      gap: 16px;
+    }
+
+    .socials img {
+      width: 20px;
+      opacity: 0.8;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 24px;
+    }
+
+    h1 { font-size: 40px; margin-bottom: 8px; }
+    h2 { font-size: 22px; margin-bottom: 16px; }
+    h3 { font-size: 18px; margin-bottom: 8px; }
+
+    p { color: var(--muted); line-height: 1.6; }
+
+    .divider {
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    .header span { color: #2563eb; }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .skill-box {
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .project small {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .tag {
+      background: #f1f5f9;
+      color: #334155;
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 999px;
+    }
+
+    .contact a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer {
+      margin-top: 32px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    footer img {
+      width: 20px;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 900px) {
+      .project {
+        grid-template-columns: 1fr;
+      }
+
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      h1 { font-size: 32px; }
+    }
+
+                .socials a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            }
+
+            .socials a:hover {
+            color: #2563eb;
+        }
+
+    html {
+    scroll-behavior: smooth;
+    }
+
+.project-images {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-img-small {
+  width: 70%;        /* THIS will now work */
+  align-self: center;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.tags + img {
+  margin-top: 20px;
+}
+  </style>
+</head>
+<body>
+  <!-- Top Header -->
+  <header class="top-header">
+  <div class="header-inner">
+    <strong>Joaquin Barola</strong>
+
+    <nav class="socials">
+      <a href="#contacts">Contacts</a>
+      <a href="#"><img src="github.png" alt="GitHub"></a>
+      <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+    </nav>
+  </div>
+</header>
+
+  <div class="container">
+
+    <!-- Header -->
+    <section class="header">
+      <h1>Nice to meet you!<br>I'm <span>Joaquin Barola</span></h1>
+      <p>
+        A 4th-year BSIT student experienced in web and mobile development, 
+        focused on building practical, user-centered solutions and eager to 
+        contribute to real-world projects while continuing professional growth.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Skills -->
+    <section>
+      <h2>Web and Mobile Application Development</h2>
+      <div class="skills">
+        <div class="skill-box">
+          <h3>Frontend</h3>
+          <p>JavaScript, React Native, Ionic, HTML, CSS</p>
+        </div>
+        <div class="skill-box">
+          <h3>Backend</h3>
+          <p>PHP, Node.js</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Projects -->
+    <section>
+      <h2>My Projects</h2>
+      <div class="projects">
+
+        <div class="project">
+        <div>
+            <h3>VoltUp (2024)</h3>
+            <small>IoT-Based Smart Energy Monitoring System</small>
+            <p>
+            An IoT system that monitors real-time energy consumption using an
+            Arduino Nano ESP32, PZEM-004T sensor, and a CT clamp, with a
+            mobile app for data visualization and alerts.
+            </p>
+
+            <div class="tags">
+            <span class="tag">IoT</span>
+            <span class="tag">ESP32</span>
+            </div>
+
+            <img src="voltup.png" alt="VoltUp Hardware Setup">
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="project-images">
+            <img src="voltup2.png" alt="VoltUp App UI" class="project-img-small">
+            
+        </div>
+        </div>
+
+
+
+
+
+        <div class="project">
+        <div>
+            <h3>OKSI (Ongoing)</h3>
+            <small>IoT-Based Smart Energy Monitoring System</small>
+            <p>
+             An automated watering and monitoring system for okra and siling
+              labuyo cultivation in urban farming. The system integrates
+              sensors, provides real-time data, and supports sustainable water
+              management through a mobile app.
+            </p>
+
+            <div class="tags">
+            <span class="tag">React Native</span>
+              <span class="tag">IoT</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">ESP32</span>
+            </div>
+
+            <img src="oksi.png" alt="oksidoksi">
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="project-images">
+            <img src="oksi2.png" alt="oksi App UI" class="project-img-small">
+            
+        </div>
+        </div>
+
+
+        
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Contact -->
+    <section id="contacts" class="contact">
+      <h2>Contact</h2>
+      <p>Feel free to contact me, I would love to hear from you!</p>
+      <p><a href="mailto:qrjfbarola@tip.edu.ph">qrjfbarola@tip.edu.ph</a></p>
+
+      <footer>
+        <strong>Joaquin Barola</strong>
+        <a href="#"><img src="github.png" alt="GitHub"></a>
+        <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+      </footer>
+    </section>
+
+  </div>
+</body>
+</html>
